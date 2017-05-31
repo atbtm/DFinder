@@ -3,16 +3,15 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class ProviderService {
+    data: any;
    providers: string[] = ["Roll Rapids", "St Joseph"];
-   url: 'http/lkll'
+   url: string = 'https://sfet-nprodnstg.dm50.dev.smed.net/sf-qa1450/mpi/QueryResponse_v3?wsdl';
    constructor(private http: Http) {
 
    }
    getProviders() {
-    //    this.http.get('url').subscribe((data) => {
-    //     //    this.providers = data;
-    //    }) 
-       return this.providers;
+       console.log(this.url);
+      return this.http.get(this.url);
    }
 
    

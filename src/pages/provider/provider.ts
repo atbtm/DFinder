@@ -19,7 +19,13 @@ export class Provider implements OnInit {
   }
 
   ngOnInit() {
-    this.providers = this.providerService.getProviders();
+    // this.providers = this.providerService.getProviders();
+    console.log("YYYYYYYYYYYYY")
+    this.providerService.getProviders().subscribe((data) => {
+          //  this.data = data;
+        console.log("########### " + data);
+       }) 
+        // return this.providers;
   }
 
 }
