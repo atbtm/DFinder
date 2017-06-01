@@ -8,6 +8,7 @@ import firebase from 'firebase';
 import { HomePage } from '../pages/pages';
 import { LoginPage } from '../pages/pages';
 import { ListPage } from '../pages/pages';
+import { AppointmentPage } from '../pages/pages';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class MyApp {
 
   rootPage: any = LoginPage;
   loginPage = LoginPage;
+  appointmentPage = AppointmentPage;
   isLoggedIn = false;
 
   pages: Array<{title: string, component: any}>;
@@ -47,6 +49,7 @@ export class MyApp {
     this.pages = [
       { title: 'Login', component: LoginPage },
       { title: 'Home', component: HomePage },
+      { title: 'Appointment', component: AppointmentPage },
       { title: 'List', component: ListPage },
       { title: 'Logout', component: "" }
     ];
@@ -79,6 +82,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+      console.log(page);
       this.nav.setRoot(page); 
       this.menuCtrl.close();
   }

@@ -19,6 +19,12 @@
         (click)="openPage(loginPage)">
         Login
       </button>
+      <button 
+        ion-item
+        *ngIf="isLoggedIn"
+        (click)="openPage(appointmentPage)">
+        Appointments
+      </button>
       <button
         ion-item
         *ngIf="isLoggedIn"

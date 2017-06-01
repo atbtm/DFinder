@@ -6,10 +6,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/pages';
 import { LoginPage } from '../pages/pages';
 import { ListPage } from '../pages/pages';
+import { AppointmentPage } from '../pages/pages';
 
 import { AuthService } from '../services/auth.service';
 import { LoginService } from '../pages/pages';
 import { DataStorageService } from '../shared/data.storage';
+import { SMS } from '@ionic-native/sms';
+import { SMSService } from '../services/sms.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     LoginPage,
-    ListPage
+    ListPage,
+    AppointmentPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     LoginPage,
-    ListPage
+    ListPage,
+    AppointmentPage
   ],
   providers: [
     StatusBar,
@@ -38,8 +43,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     LoginService,
-    DataStorageService
-    
+    DataStorageService,
+    SMS,
+    SMSService 
   ]
 })
 export class AppModule {}

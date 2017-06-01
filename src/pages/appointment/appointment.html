@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Appointment</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+ <ion-card>
+   <ion-item>
+     <ion-label stacked>Phone Number</ion-label>
+     <ion-input [(ngModel)]="phoneNumber" type="tel"></ion-input>
+   </ion-item>
+    <ion-item>
+     <ion-label stacked>Message</ion-label>
+     <ion-input [(ngModel)]="textMessage" type="text"></ion-input>
+   </ion-item>
+   <ion-item>
+     <button ion-button icon-left clear item-right (click)="smsService.sendTextMessage()">
+       <ion-icon name="checkmark"></ion-icon>
+       Send
+     </button>
+   </ion-item>
+ </ion-card>
+</ion-content>
