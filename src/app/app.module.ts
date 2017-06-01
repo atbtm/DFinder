@@ -9,6 +9,7 @@ import { ListPage } from '../pages/pages';
 
 import { AuthService } from '../services/auth.service';
 import { LoginService } from '../pages/pages';
+import { DataStorageService } from '../shared/data.storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,7 +37,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    LoginService
+    LoginService,
+    DataStorageService
+    
   ]
 })
 export class AppModule {}
