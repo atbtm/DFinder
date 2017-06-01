@@ -13,7 +13,7 @@
       <ion-avatar item-left>
         <img src="https://www.nopaymba.com/wp-content/uploads/avatars/90/694b479e191a359e6afa33a03670dd27-bpfull.jpg">
       </ion-avatar>
-      <h2>Welcome Mahamadou</h2>
+      <h2>{{person.getName()}}</h2>
       <p>November 5, 1935</p>
     </ion-item>
   </ion-card>
@@ -34,5 +34,10 @@
       <ion-icon name="card" color="primary"></ion-icon>
       Insurance
     </ion-item>
-  </ion-card>
+  <!--</ion-card>
+   <ul>
+    <li *ngFor="let person of items | async">
+       {{ item | json }}
+    </li>
+  </ul>-->
 </ion-content>

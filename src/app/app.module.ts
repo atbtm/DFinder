@@ -8,7 +8,7 @@ import { LoginPage } from '../pages/pages';
 import { ListPage } from '../pages/pages';
 
 import { AuthService } from '../services/auth.service';
-import { LoginService } from '../pages/pages';
+import { LoginService } from '../services/login.service';
 import { DataStorageService } from '../shared/data.storage';
 
 import { StatusBar } from '@ionic-native/status-bar';

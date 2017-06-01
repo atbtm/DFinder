@@ -7,6 +7,9 @@ export class Person  {
     setName(name:string){
         this.name = name;
     }
+    getName() {
+        return this.name;
+    }
     setDOB(dob:string){
         this.dob = dob;
     }
