@@ -35,7 +35,7 @@
                     <p> {{ encounter.getEncDx() }}</p>
             </ion-item>
         </ion-card>
-        <ion-card *ngFor="let insurance of person.profile.insurances">            
+        <ion-card *ngFor="let insurance of person?.profile?.insurances">            
             <ion-item 
                 icon-left>                
                 <h2 text-center><ion-icon name="card" color="primary"></ion-icon> Insurances</h2>                

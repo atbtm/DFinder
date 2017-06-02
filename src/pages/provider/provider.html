@@ -11,7 +11,7 @@
   <ion-row>
     <ion-col col-11>
       <ion-item>
-        <ion-label>Search by Zipcode</ion-label>
+        <ion-label >Search by Zipcode</ion-label>
         <ion-input type="text" placeholder="{{userLocation}}"
                    name="title"
                    [(ngModel)]="userLocation"
@@ -71,13 +71,29 @@
         
         <ion-list>
           <ion-item *ngFor="let provider of providerList; let i = index">
-            #{{i+1}}
+
+            <!--#{{i+1}}
             <pre>id: {{provider.id}}</pre>
             <pre>Provider Name: {{provider.name}}</pre>
             <pre>Address: {{provider.address}}</pre>
             <pre>Rating: {{provider.rating}}</pre>
             <pre>Procedures charges for {{userProcedure}}: {{(provider.getFilteredProcedure())}} </pre>
-            <button ion-button color="secondary">Make an appointment</button>
+            <button ion-button color="secondary">Make an appointment</button>-->
+
+            <!--<ion-content padding>-->
+            <ion-card >
+              <ion-item>
+                <ion-item icon-left>
+                  <ion-icon name="add-circle" color="red"></ion-icon></ion-item>
+                <h2>{{provider.name}}</h2>
+                <p>{{provider.address}}</p>
+                <p>Rating: {{provider.rating}}</p>
+                <p>Procedures charges for {{userProcedure}} basicInsurance: ${{(provider.getFilteredProcedure().basicInsurance)}}</p>
+                <p>Procedures charges for {{userProcedure}} noInsurance: ${{(provider.getFilteredProcedure().noInsurance)}}</p>
+                <p>Procedures charges for {{userProcedure}} premiumInsurance: ${{(provider.getFilteredProcedure().premiumInsurance)}}</p>
+                <button ion-button color="secondary">Make an appointment</button>
+              </ion-item>
+            </ion-card>
           </ion-item>
         </ion-list>
     </ion-card>

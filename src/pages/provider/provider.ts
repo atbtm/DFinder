@@ -54,7 +54,9 @@ export class ProviderPage {
           var provider = res.val()[uid];
           var jsonServices = provider.services;
           var currProcedure;
-          currProcedure = new Procedure(this.userProcedure, JSON.stringify(jsonServices[this.userProcedure]));
+          var procedureForDisplay: any;
+          console.log(JSON.stringify(jsonServices));
+          currProcedure = new Procedure(this.userProcedure, jsonServices[this.userProcedure]);
 
        //       console.log("currProcedure " + currProcedure);
         //  }
