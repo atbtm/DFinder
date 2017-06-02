@@ -15,6 +15,7 @@ import { Insurance } from '../../models/insurance.model';
 import { PersonService } from '../../services/person.service';
 
 import { ProfilePage } from '../profile/profile';
+import { ProviderPage } from '../provider/provider';
 // import { ProfilePage } from '../profile/profile';
 
 
@@ -29,47 +30,15 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.personService.load()
-      .map((response: Response) => {
-                return response.json();
-            })
-            .subscribe((data) => {
-              var name = data.PersonalDetails.Name;
-              var dob = data.PersonalDetails.DOB;
-              var gender = data.PersonalDetails.Gender;
-              var id = data.ID;
-              var photo = data.Photo;
-              console.log('########## ' + photo);
-              var primaryPhysician = data.PrimaryPhysician;
-              var email = data.emailID;
-              var address = new Address(data.Address.StreetAddress, 
-                                        data.Address.City, 
-                                        data.Address.Zipcode, 
-                                        data.Address.State,
-                                        data.Address.PhoneNumber);
-                                        
-              var enc = new Encounter(data.EncounterDetails.StartDate, 
-                                            data.EncounterDetails.EncounterProvider,
-                                            data.EncounterDetails.EncounterType,
-                                            data.EncounterDetails.Diagnosis);
-
-              var encounters = [];
-              encounters.push(enc);
-
-              var ins = new Insurance(data.Insurance.GroupId, data.Insurance.PlanName, data.Insurance.RxId);
-
-              var insurances = [];
-              insurances.push(ins);
-              var profile = new Profile(photo, primaryPhysician, email, address, encounters, insurances);
-              this.person = new Person(name, dob, gender, id, profile);
-              this.personService.setPeron(this.person);
-              // console.log(data.Address.City);
-              console.log(this.person);
-            })
+    this.person = this.personService.getPerson(); 
   }
   
   goToProfile() {
-    this.navCtrl.push(ProfilePage)
+    this.navCtrl.push(ProfilePage);
+  }
+
+  goToProviderPage() {
+    this.navCtrl.push(ProviderPage)
   }
 
 }

@@ -18,22 +18,18 @@
 
     </ion-item>
   </ion-card>
-  <h3 text-center>Procedures</h3>
-  <ion-card *ngFor="let procedure of procedures">
-    <ion-item 
-      
-      icon-left>
-      <ion-icon name="pulse" color="danger"></ion-icon>
-      {{procedure.name }} ${{ procedure.price}}
-    </ion-item>
-  </ion-card>
-  <h3 text-center>Insurances</h3>
-  <ion-card >
-    <ion-item 
-      
-      icon-left>
-      <ion-icon name="card" color="primary"></ion-icon>
-      Insurance
-    </ion-item>
-  </ion-card>
+  <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button
+                ion-button
+                block
+                (click)="goToProviderPage()"
+                icon-left>
+                <ion-icon name="log-in"></ion-icon>
+                Shop Procedures
+            </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>  
 </ion-content>

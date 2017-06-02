@@ -4,6 +4,7 @@ import { Http, Response } from '@angular/http'
 //  import { AngularFireDatabase } from 'angularfire2/database';
  import { LoginService } from '../services/login.service';
  import { AuthService } from '../services/auth.service';
+ 
  import firebase from 'firebase';
 
 @Injectable()
@@ -18,8 +19,8 @@ export class PersonService {
      }
 
      load() {
-        return this.http.get('https://dfinder-e9ef7.firebaseio.com/Person/123-45-6788.json');
-       
+        // return this.http.get('https://dfinder-e9ef7.firebaseio.com/Person/' + this.loginSevice.getSSN() + '.json');       
+        return this.http.get('https://dfinder-e9ef7.firebaseio.com/Person/123-45-6789.json');       
      }
 
      setPeron(person: Person) {

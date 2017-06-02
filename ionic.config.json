@@ -3,9 +3,9 @@
   "app_id": "778290ef",
   "type": "ionic-angular",
   "proxies": [
-    {
-      "path": "/api",
-      "proxyUrl": "https://robohash.org/api"
-    }
-  ]
+      {
+        "path": "/maps/api",
+        "proxyUrl": "https://maps.googleapis.com/maps/api"
+      }
+    ]
 }

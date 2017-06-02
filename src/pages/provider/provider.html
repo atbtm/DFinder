@@ -1,0 +1,93 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Provider</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-11>
+      <ion-item>
+        <ion-label>Search by Zipcode</ion-label>
+        <ion-input type="text" placeholder="{{userLocation}}"
+                   name="title"
+                   [(ngModel)]="userLocation"
+                   required></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-1>
+      <ion-icon name="locate" (click)="locateMe()"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-item>
+    <ion-label>Procedures</ion-label>
+    
+    <ion-select  [(ngModel)]="userProcedure" multiple="false" (ionChange)="optionsFn();">
+        <ion-option *ngFor="let pcdr of procedureList">{{pcdr}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-buttons>
+          <button block ion-button item-left icon-only  (click)="getProviders()">
+            <ion-icon name="eye"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <!--
+    <ion-col>
+      <ion-buttons>
+        <button ion-button item-right icon-only block (click)="populateDbToGrid()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-col>
+        -->
+    </ion-row>
+  </ion-grid>
+  <ion-row *ngIf="locationIsSet">
+    <ion-col>
+      <!--40.0602746, -75.5215987-->
+      <sebm-google-map [latitude]="userLat"
+                       [longitude]="userLng"
+                       [zoom]="12">
+        <sebm-google-map-marker [latitude]="userLat" [longitude]="userLng" [label]="'ME'">
+        </sebm-google-map-marker>
+          <sebm-google-map-marker *ngFor="let provider of providerList; let i = index"
+                                  [latitude]="provider.lat" [longitude]="provider.lng" [title]="i+1">
+          </sebm-google-map-marker>
+      </sebm-google-map>
+    </ion-col>
+    </ion-row>
+    <ion-card>
+      <ion-card-header>
+        <h1>Nearby health providers..</h1>
+      </ion-card-header>
+        
+        <ion-list>
+          <ion-item *ngFor="let provider of providerList; let i = index">
+            #{{i+1}}
+            <pre>id: {{provider.id}}</pre>
+            <pre>Provider Name: {{provider.name}}</pre>
+            <pre>Address: {{provider.address}}</pre>
+            <pre>Rating: {{provider.rating}}</pre>
+            <pre>Procedures charges for {{userProcedure}}: {{(provider.getFilteredProcedure())}} </pre>
+            <button ion-button color="secondary">Make an appointment</button>
+          </ion-item>
+        </ion-list>
+    </ion-card>
+
+  <!--
+      <ion-list>
+        <ion-item>
+          <pre>##Provider Listing: {{providerList | json}}</pre>
+        </ion-item>
+      </ion-list>
+      -->
+
+</ion-content>

@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/pages';
 import { ListPage } from '../pages/pages';
 import { AppointmentPage } from '../pages/pages';
 import { ProfilePage } from '../pages/pages';
+import { ProviderPage } from '../pages/pages';
 
 import { AuthService } from '../services/auth.service';
 import { LoginService } from '../services/login.service';
@@ -24,6 +25,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { Geolocation } from '@ionic-native/geolocation';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,12 +35,16 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     LoginPage,
     ListPage,
     AppointmentPage,
-    ProfilePage
+    ProfilePage,
+    ProviderPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+          apiKey: 'AIzaSyBZmraWD9Qtku4ZxkM4eB8WvB7et2ML560'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +53,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     LoginPage,
     ListPage,
     AppointmentPage,
-    ProfilePage
+    ProfilePage,
+    ProviderPage
   ],
   providers: [
     StatusBar,
@@ -56,7 +65,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     DataStorageService,
     SMS,
     SMSService,
-    PersonService
+    PersonService,
+    Geolocation
   ]
 })
 export class AppModule {}

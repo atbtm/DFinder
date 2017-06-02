@@ -3,12 +3,15 @@ import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
 import { HomePage } from '../pages/pages';
 import { LoginPage } from '../pages/pages';
 import { ListPage } from '../pages/pages';
 import { AppointmentPage } from '../pages/pages';
+import { ProviderPage } from '../pages/pages';
+import { ProfilePage } from '../pages/pages';
+
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -20,6 +23,8 @@ export class MyApp {
   rootPage: any = LoginPage;
   loginPage = LoginPage;
   appointmentPage = AppointmentPage;
+  providerPage = ProviderPage;
+  profilePage = ProfilePage;
   isLoggedIn = false;
 
   pages: Array<{title: string, component: any}>;
@@ -35,6 +40,17 @@ export class MyApp {
       authDomain: "dfinder-e9ef7.firebaseapp.com",
       databaseURL: "https://dfinder-e9ef7.firebaseio.com",
     });
+//     firebase.initializeApp({
+//       apiKey: "AIzaSyAXwqkQhaRynB_yJz1NUezgP8JoaQt1Sc0",
+//       authDomain: "fir-playground-195a9.firebaseapp.com",
+//       databaseURL: "https://fir-playground-195a9.firebaseio.com",
+//       projectId: "fir-playground-195a9",
+//       storageBucket: "fir-playground-195a9.appspot.com",
+//       messagingSenderId: "692509908432"
+//     });
+
+    
+
 
     firebase.auth().onAuthStateChanged(user => {
       if(user) {
@@ -52,7 +68,8 @@ export class MyApp {
       { title: 'Login', component: LoginPage },
       { title: 'Home', component: HomePage },
       { title: 'Appointment', component: AppointmentPage },
-      { title: 'List', component: ListPage },
+      { title: 'Providers', component: ProviderPage },
+      { title: 'Profile', component: ProfilePage },
       { title: 'Logout', component: "" }
     ];
 

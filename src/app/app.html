@@ -13,6 +13,12 @@
         (click)="openPage(rootPage)">
         Home
       </button>
+       <button
+        ion-item
+        *ngIf="isLoggedIn" 
+        (click)="openPage(profilePage)">
+        Profile
+      </button>
       <button 
         ion-item
         *ngIf="!isLoggedIn"
@@ -24,6 +30,12 @@
         *ngIf="isLoggedIn"
         (click)="openPage(appointmentPage)">
         Appointments
+      </button>
+       <button 
+        ion-item
+        *ngIf="isLoggedIn"
+        (click)="openPage(providerPage)">
+        Provider
       </button>
       <button
         ion-item

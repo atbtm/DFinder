@@ -1,10 +1,23 @@
-import {Address} from './address.model';
+import { Address } from './address.model';
+import { Procedure } from './procedure.model';
 
 export class Provider {
-    constructor(private name:string, private address:Address, private phone:string, private rating:string, private price:string){
+    constructor(public id: string, 
+                public name: string, 
+                public lat:string, 
+                public lng:string, 
+                public address: Address,
+                public rating: string, 
+                public procedures:any){
 
     }
-
+    hasProcedure(name:string) {
+        return true; 
+    }
+  
+    getFilteredProcedure() {
+        return this.procedures.price;
+    }
     setName(name:string){
         this.name = name;
     }
@@ -12,14 +25,18 @@ export class Provider {
     setAddress(address:Address){
         this.address = address;
     }
-    setPhone(phone:string){
-        this.phone = phone;
-    }
 
     setRating(rating:string){
         this.rating = rating;
     }
-    setPrice(price:string){
-        this.price= price;
+    getId() {
+        return this.id;
+    }
+
+    getName() {
+        return this.name;
+    }
+    getProcedures() {
+        return JSON.stringify(this.procedures);
     }
 }

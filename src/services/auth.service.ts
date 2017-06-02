@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFireDatabase } from 'angularfire2/database';
+// import { AngularFireDatabase } from 'angularfire2/database';
 
 import firebase from 'firebase';
 
@@ -22,6 +22,7 @@ export class AuthService {
     }
 
     login(email: string, password: string) {
+        console.log(email + ' ' + password);
         return firebase.auth().signInWithEmailAndPassword(email, password);
     }
     logout() {
