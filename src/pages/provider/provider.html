@@ -83,27 +83,16 @@
             <!--<ion-content padding>-->
             <ion-card >
               <ion-item>
-                <ion-item icon-left>
-                  <ion-icon name="add-circle" color="red"></ion-icon></ion-item>
                 <h2>{{provider.name}}</h2>
                 <p>{{provider.address}}</p>
                 <p>Rating: {{provider.rating}}</p>
-                <p>Procedures charges for {{userProcedure}} basicInsurance: ${{(provider.getFilteredProcedure().basicInsurance)}}</p>
-                <p>Procedures charges for {{userProcedure}} noInsurance: ${{(provider.getFilteredProcedure().noInsurance)}}</p>
-                <p>Procedures charges for {{userProcedure}} premiumInsurance: ${{(provider.getFilteredProcedure().premiumInsurance)}}</p>
-                <button ion-button color="secondary">Make an appointment</button>
+                <p>{{userProcedure}} Premium Insurance: <ion-badge item-end>${{(provider.getFilteredProcedure().premiumInsurance)}}</ion-badge></p>
+                <p>{{userProcedure}} Basic Insurance: <ion-badge item-end>${{(provider.getFilteredProcedure().basicInsurance)}}</ion-badge></p>
+                <p>{{userProcedure}} No Insurance: <ion-badge item-end>${{(provider.getFilteredProcedure().noInsurance)}}</ion-badge></p>
+                <button ion-button color="secondary" (click)="bookAppointment(provider)">Make an appointment</button>
               </ion-item>
             </ion-card>
           </ion-item>
         </ion-list>
     </ion-card>
-
-  <!--
-      <ion-list>
-        <ion-item>
-          <pre>##Provider Listing: {{providerList | json}}</pre>
-        </ion-item>
-      </ion-list>
-      -->
-
 </ion-content>

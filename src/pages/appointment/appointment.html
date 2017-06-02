@@ -7,20 +7,48 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+   <ion-card>
+      <ion-card-content>
+        <ion-card-title>
+          {{person?.name}}
+        </ion-card-title>
+      </ion-card-content>
+      <ion-item icon-left>
+        <ion-icon name='logo-reddit'></ion-icon>
+        {{provider?.name}}
+      </ion-item>
+      <ion-item>
+        <ion-icon icon-left>
+          <ion-icon name='person-add'></ion-icon>
+          Primary Physician: {{person?.profile.getPrimaryPhysician()}}
+        </ion-icon>
+      </ion-item>
+      <ion-item icon-left>
+        <ion-icon name='logo-reddit'></ion-icon>
+        {{person?.dob}}
+      </ion-item>
+      <ion-item icon-left>
+        <ion-icon name='mail'></ion-icon>
+        {{person?.profile?.email}}      
+      </ion-item>
+    </ion-card>
  <ion-card>
-   <ion-item>
+   <!--<ion-item>
      <ion-label stacked>Phone Number</ion-label>
      <ion-input [(ngModel)]="phoneNumber" type="tel"></ion-input>
    </ion-item>
     <ion-item>
      <ion-label stacked>Message</ion-label>
      <ion-input [(ngModel)]="textMessage" type="text"></ion-input>
-   </ion-item>
-   <ion-item>
-     <button ion-button icon-left clear item-right (click)="smsService.sendTextMessage()">
+   </ion-item>-->
+   <ion-item *ngIf="!confirm">
+     <button ion-button icon-left clear item-right >
        <ion-icon name="checkmark"></ion-icon>
-       Send
+       Confirm Appointment
      </button>
    </ion-item>
+   <!--<ion-item *ngIf="confirm">
+     Confirmation sent!
+   </ion-item>-->
  </ion-card>
 </ion-content>

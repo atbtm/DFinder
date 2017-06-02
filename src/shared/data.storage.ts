@@ -5,7 +5,6 @@ import 'rxjs/Rx';
 import { Person } from '../models/person.model';
 
 import { AuthService } from '../services/auth.service';
-// import { PersonService } from '../pages/person.service';
 
 @Injectable()
 export class DataStorageService {

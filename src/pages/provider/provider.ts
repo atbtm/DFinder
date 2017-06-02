@@ -5,6 +5,7 @@ import * as firebase from "firebase";
 import { Provider } from '../../models/provider.model';
 import { Procedure } from '../../models/procedure.model';
 import { Geolocation } from '@ionic-native/geolocation';
+import { AppointmentPage } from '../appointment/appointment';
 
 // firebase.initializeApp({
 //     apiKey: "AIzaSyAXwqkQhaRynB_yJz1NUezgP8JoaQt1Sc0",
@@ -34,6 +35,7 @@ export class ProviderPage {
     public servicePriceMap;
     engine: string;
     public providers = [];
+    
 
     constructor(public navCtrl: NavController, 
                 public alertCtrl: AlertController,
@@ -54,22 +56,12 @@ export class ProviderPage {
           var provider = res.val()[uid];
           var jsonServices = provider.services;
           var currProcedure;
-          var procedureForDisplay: any;
-          console.log(JSON.stringify(jsonServices));
           currProcedure = new Procedure(this.userProcedure, jsonServices[this.userProcedure]);
-
-       //       console.log("currProcedure " + currProcedure);
-        //  }
-        //  );
           let currProvider = new Provider(provider.id, provider.name,
-              provider.geometry.location.lat, provider.geometry.location.lng,
-              provider.vicinity, provider.rating,  currProcedure);
-          
-          //console.log("##Logging id from obj"+currProvider.getId());
+          provider.geometry.location.lat, provider.geometry.location.lng,
+          provider.vicinity, provider.rating,  currProcedure);
           this.providerId = currProvider.name;
-      //    console.log(JSON.stringify(currProvider));
           this.providerList.push(currProvider);
-         // return currProvider;
       }
       );
   }
@@ -79,15 +71,12 @@ export class ProviderPage {
   }
   pushProviders(data) {
       let providerResult = data.json().results;
-     // console.log("#@#$@$" + JSON.stringify(providerResult));
       function genPrice(base, servicePrice, randomFactor, insuranceFactor) {
           return Math.floor((base + servicePrice * (0.8 + 0.2 * randomFactor) * insuranceFactor) * 100) / 100;
       }
       this.providerIdArr = [];
-  //    console.log(this.providerIdArr);
       for (let provider of providerResult) {
           let id = provider.id;
-
           this.providerIdArr.push(id);
           /**
            *  These are parameters that need to be passed in
@@ -108,9 +97,7 @@ export class ProviderPage {
               };
               nextService = serviceItr.next();
           }
-          //console.log("############PRINTING Provider Str: " + JSON.stringify(provider.services));
           firebase.database().ref('providers/' + id).set(provider);
-
       }
       
   }
@@ -119,12 +106,7 @@ export class ProviderPage {
       this.providerList = [];
       this.providerIdArr.forEach(uid => {
           var v = this.getProviderFromFirebase(uid);
-      //    console.log("##" + v);
-    //      this.providerList.push(v);
       })
-      console.log("##" + this.providerList);
-    //  this.providerList.push(currProvider);
-
   }
 
   locateMe() {
@@ -145,41 +127,24 @@ export class ProviderPage {
           );
   }
   getProviders() {
-    //  this.providerList = [];
       this.providers = [];
       let coordQuery = "https://maps.googleapis.com/maps/api/geocode/json?address=" + this.userLocation + "&key=AIzaSyBZmraWD9Qtku4ZxkM4eB8WvB7et2ML560";
       var jsonRes;
 
       this.http.get(coordQuery).subscribe(data => {
-      //    var lat, lng;
-      //    console.log(data.json().results[0]);
           this.userLat = data.json().results[0].geometry.location.lat;
           this.userLng = data.json().results[0].geometry.location.lng;
-      //    console.log(lat + " " + lng);
 
           /**
            *  These are parameters that need to be passed in
            */
           let radius = "5000";               // search radius
           let providerType = "hospital";      // facility type
-    //      console.log("###userLocation: " + this.userLocation);
-    //      let serviceType = "mri";            // keyword. Currently ignoring this, since mocking up service&price info
 
           let providerQuery;
-          console.log("Real location"+this.userLocation);
-          console.log("#Final lat:"+this.userLat);
-          console.log("#Final lng:" +this.userLng);
-     //     if (new RegExp('^[0-9]*$').test(this.userLocation)) {
-     //         console.log("#@#@$!!!!!!!!!!$$All numbers");
-    //          providerQuery = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${radius}&type=${providerType}&key=AIzaSyBZmraWD9Qtku4ZxkM4eB8WvB7et2ML560`;
-
-    //      } else {
-              providerQuery = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.userLat},${this.userLng}&radius=${radius}&type=${providerType}&key=AIzaSyBZmraWD9Qtku4ZxkM4eB8WvB7et2ML560`;
-
-   //       }
+          providerQuery = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.userLat},${this.userLng}&radius=${radius}&type=${providerType}&key=AIzaSyBZmraWD9Qtku4ZxkM4eB8WvB7et2ML560`;
 
           this.providerIdArr = [];
-          //    console.log(providerQuery);
           this.http.get(providerQuery)
               .subscribe(data => {
                   jsonRes = data;
@@ -192,9 +157,12 @@ export class ProviderPage {
               });
       }, (err) => {
           console.log(err);
-          });      
-
-
+        }); 
   }
 
+  bookAppointment(provider) {
+      this.navCtrl.push(AppointmentPage, {'provider': provider});
+  }
+
+  
 }

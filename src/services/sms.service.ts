@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { SMS } from '@ionic-native/sms';
 import { ToastController } from 'ionic-angular';
 
@@ -22,6 +22,7 @@ export class SMSService {
     });
       toast.present();
     } catch (e) {
+      console.log("Error sending sms: " + e);
         const toast = this.toast.create({
         message: 'Text was not sent!',
         duration: 3000
