@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NavController, Nav, LoadingController, AlertController } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'page-login',
@@ -9,11 +10,14 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginPage {
 
+  ssn: string;
+
   constructor(private navCtrl: NavController, 
               private nav: Nav,
               private loadingCtrl: LoadingController,
               private alertCtrl: AlertController,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private loginService: LoginService) {
     
   }
 
@@ -26,6 +30,9 @@ export class LoginPage {
         .then(data => {
 
           if(data != null) {
+            this.ssn = form.value.password;
+            this.loginService.setSSN(this.ssn);
+            
               console.log("  Provider-specific UID: "+ data.getIdToken());
             data.providerData.forEach(function(profile) {
               console.log("Sign-in provider: "+profile.providerId);
@@ -47,4 +54,7 @@ export class LoginPage {
           alert.present();
         })
   }
+
+  
+
 }

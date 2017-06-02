@@ -2,6 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { SMS } from '@ionic-native/sms';
 import { ToastController } from 'ionic-angular';
 
+
 @Injectable()
 export class SMSService {
 

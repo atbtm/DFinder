@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <img src="https://www.nopaymba.com/wp-content/uploads/avatars/90/694b479e191a359e6afa33a03670dd27-bpfull.jpg">
+
+    <ion-card-content>
+      <ion-card-title>
+        {{person?.name}}
+      </ion-card-title>
+      <p>
+        Björk first came to prominence as one of the lead vocalists of the avant pop Icelandic sextet the Sugarcubes, but when...
+      </p>
+    </ion-card-content>
+
+    <ion-item>
+      <ion-icon name='logo-reddit' item-start></ion-icon>
+      <p>{{person?.dob}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon name='mail' item-start></ion-icon>
+      <p>{{person?.profile.email}}</p>      
+    </ion-item>
+
+    <ion-item>
+        <ion-card *ngFor="let encounter of person.profile.encounters">
+            <ion-item 
+                icon-left>
+                <h2 text-center><ion-icon name="pulse" color="danger"></ion-icon> Encounters</h2>
+                    <p> {{encounter.getEncStartDate()}}</p>
+                    <p> {{encounter.getEncType()}}</p>
+                    <p> {{encounter.getEncProvider()}}</p>
+                    <p> {{ encounter.getEncDx() }}</p>
+            </ion-item>
+        </ion-card>
+        <ion-card *ngFor="let insurance of person.profile.insurances">            
+            <ion-item 
+                icon-left>                
+                <h2 text-center><ion-icon name="card" color="primary"></ion-icon> Insurances</h2>                
+                    <p> {{insurance.getGroupId()}}</p>
+                    <p> {{insurance.getPlanName()}}</p>
+                    <p> {{insurance.getRxID()}}</p>
+            </ion-item>
+            
+        </ion-card>
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>

@@ -33,7 +33,9 @@ export class MyApp {
     firebase.initializeApp({
       apiKey: "AIzaSyBriR1rBSf_Ve-BJ77tog0Kdd41gx2v2mM",
       authDomain: "dfinder-e9ef7.firebaseapp.com",
-    })
+      databaseURL: "https://dfinder-e9ef7.firebaseio.com",
+    });
+
     firebase.auth().onAuthStateChanged(user => {
       if(user) {
         this.isLoggedIn = true;
@@ -55,21 +57,7 @@ export class MyApp {
     ];
 
   }
-
-  // ionViewWillEnter() {
-  //   if(this.isLoggedIn) {
-  //     this.pages = [
-  //       { title: 'Home', component: HomePage },
-  //       { title: 'List', component: ListPage },
-  //       { title: 'Logout', component: "" }
-  //     ];
-  //   } else {
-  //     this.pages = [
-  //       { title: 'Login', component: LoginPage }
-  //     ];
-  //   }
-  // }
-
+  
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

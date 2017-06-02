@@ -7,11 +7,23 @@ export class Insurance {
         this.groupid = groupid;
     }
 
+    getGroupId(){
+        return this.groupid;
+    }
+
     setPlanName(planName:string){
         this.planName = planName;
     }
 
+    getPlanName(){
+        return this.planName;
+    }
+
     setRxID(rxID:string){
         this.rxID = rxID;
+    }
+
+    getRxID(){
+        return this.rxID;
     }
 }

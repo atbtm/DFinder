@@ -5,13 +5,11 @@ import 'rxjs/Rx';
 import { Person } from '../models/person.model';
 
 import { AuthService } from '../services/auth.service';
-import { PersonService } from '../pages/person/person.service';
+// import { PersonService } from '../pages/person.service';
 
 @Injectable()
 export class DataStorageService {
-     constructor(private http: Http,
-              private patientService: PersonService,
-              private authService: AuthService) {
+     constructor(private http: Http, private authService: AuthService) {
   }
 
   setPerson(person: Person) {
