@@ -1,0 +1,142 @@
+{"Person":{"123-45-6789":{
+  "Address" : {
+    "City" : "Charleston",
+    "PhoneNumber" : "6154954590",
+    "State" : "WV",
+    "StreetAddress" : "2 Forest Drive",
+    "Zipcode" : "25321"
+  },
+  "EncounterDetails" : {
+    "Diagnosis" : "Application of neck support",
+    "StartDate" : "1/31/2017",
+    "EncounterProvider" : "Memorial Hospital",
+    "EncounterType" : "CheckedIn"
+  },
+  "ID" : "123-45-6789",
+  "Insurance" : {
+    "GroupId" : "996607",
+    "PlanName" : "Metropolitan Group",
+    "RxId" : "239668"
+  },
+  "PersonalDetails" : {
+    "DOB" : "11/23/2016",
+    "Gender" : "Male",
+    "Name" : "Romola Singh"
+  },
+  "Photo" : "https://robohash.org/dolorodiohic.bmp?size=50x50&set=set1",
+  "PrimaryPhysician" : "Dr. Yuonne Lakin",
+  "emailID" : "rgwinnel0@mozilla.com"
+}, "123-45-6788":{
+  "Address" : {
+    "City" : "Tulsa",
+    "PhoneNumber" : "4843180412",
+    "State" : "OK",
+    "StreetAddress" : "5 Farmco Junction",
+    "Zipcode" : "74184"
+  },
+  "EncounterDetails" : {
+    "Diagnosis" : "Incision of petrous pyramid air cells",
+    "StartDate" : "1/21/2017",
+    "EncounterProvider" : "University Hospitals",
+    "EncounterType" : "CheckedIn"
+  },
+  "ID" : "123-45-6788",
+  "Insurance" : {
+    "GroupId" : "032731",
+    "PlanName" : "Mutual Health",
+    "RxId" : "767492"
+  },
+  "PersonalDetails" : {
+    "DOB" : "3/31/2017",
+    "Gender" : "Female",
+    "Name" : "Paxon Payton"
+  },
+  "Photo" : "https://robohash.org/eiuserrorqui.bmp?size=50x50&set=set1",
+  "PrimaryPhysician" : "Dr. Wilbert Paucek",
+  "emailID" : "ppayton1@deviantart.com"
+},"987-65-4321":{
+  "Address" : {
+    "City" : "Yakima",
+    "PhoneNumber" : "4848491427",
+    "State" : "WA",
+    "StreetAddress" : "5194 Bultman Place",
+    "Zipcode" : "98907"
+  },
+  "EncounterDetails" : {
+    "Diagnosis" : "Cystometrogram",
+    "StartDate" : "4/29/2017",
+    "EncounterProvider" : "Ancillary",
+    "EncounterType" : "CheckedIn"
+  },
+  "ID" : "987-65-4321",
+  "Insurance" : {
+    "GroupId" : "943801",
+    "PlanName" : "United Health Group",
+    "RxId" : "136764"
+  },
+  "PersonalDetails" : {
+    "DOB" : "2/15/2017",
+    "Gender" : "Female",
+    "Name" : "Nicky Dealey"
+  },
+  "Photo" : "https://robohash.org/quidemeiusvoluptates.png?size=50x50&set=set1",
+  "PrimaryPhysician" : "Dr. Harry Hintz",
+  "emailID" : "ndealey2@meetup.com"
+},"666-66-6666":{
+  "Address" : {
+    "City" : "Charleston",
+    "PhoneNumber" : "4848491427",
+    "State" : "WV",
+    "StreetAddress" : "759 Fairview Place",
+    "Zipcode" : "25326"
+  },
+  "EncounterDetails" : {
+    "Diagnosis" : "Total pancreatectomy",
+    "StartDate" : "2/5/2017",
+    "EncounterProvider" : "University Hospitals",
+    "EncounterType" : "OP"
+  },
+  "ID" : "666-66-6666",
+  "Insurance" : {
+    "GroupId" : "498216",
+    "PlanName" : "",
+    "RxId" : "308584"
+  },
+  "PersonalDetails" : {
+    "DOB" : "4/28/2017",
+    "Gender" : "Female",
+    "Name" : "Winne Whittick"
+  },
+  "Photo" : "https://robohash.org/autemeumqui.png?size=50x50&set=set1",
+  "PrimaryPhysician" : "Dr. Kathryn McDermott",
+  "emailID" : "wwhittick3@sfgate.com"
+},"222-22-2222":{
+  "Address" : {
+    "City" : "New York City",
+    "PhoneNumber" : "6154954590",
+    "State" : "NY",
+    "StreetAddress" : "25 Moland Point",
+    "Zipcode" : "10014"
+  },
+  "EncounterDetails" : {
+    "Diagnosis" : "Injection into anterior chamber",
+    "StartDate" : "3/27/2017",
+    "EncounterProvider" : "MC Hospital",
+    "EncounterType" : "CheckedIn"
+  },
+  "ID" : "222-22-2222",
+  "Insurance" : {
+    "GroupId" : "563861",
+    "PlanName" : "Mutual Health",
+    "RxId" : "390282"
+  },
+  "PersonalDetails" : {
+    "DOB" : "9/12/2016",
+    "Gender" : "Female",
+    "Name" : "Osborn Markie"
+  },
+  "Photo" : "https://robohash.org/reprehenderiteasit.bmp?size=50x50&set=set1",
+  "PrimaryPhysician" : "Dr. Ariel Hodkiewicz",
+  "emailID" : "omarkie4@furl.net"
+} }
+}

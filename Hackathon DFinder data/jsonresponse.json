@@ -1,0 +1,123 @@
+ {"ns3:RSP_ZK21": {
+        "ns2:MSH": {
+            "ns2:MSH_10": {
+                "Item": 10,
+                "Type": "ST",
+                "LongName": "Message Control ID"
+            },
+            "ns2:MSH_11": {"ns2:PT_1": "P"},
+            "ns2:MSH_12": {"ns2:VID_1": "2_5_1"},
+            "ns2:MSH_9": {
+                "ns2:MSG_1": "RSP",
+                "ns2:MSG_3": "RSP_K21",
+                "ns2:MSG_2": "K21"
+            },
+            "ns2:MSH_3": {"ns2:HD_1": "SOARF"},
+            "ns2:MSH_2": "^~\\@",
+            "ns2:MSH_1": "|"
+        },
+        "xmlns:ns2": "urn:hl7-org:v2xml",
+        "ns3:ZQPD21": {"ns3:ZQPD21_3": {
+            "Type": "hl7type:CX",
+            "ns2:CX_1": {
+                "Type": "ST",
+                "LongName": "ID Number",
+                "content": 987654321
+            },
+            "LongName": "Person Identifier",
+            "ns2:CX_5": {
+                "Type": "ID",
+                "Table": "HL70203",
+                "LongName": "Identifier Type Code",
+                "content": "SS"
+            },
+            "ns2:CX_4": {
+                "Type": "HD",
+                "Table": "HL70363",
+                "LongName": "Assigning Authority",
+                "ns2:HD_1": {
+                    "Type": "IS",
+                    "Table": "HL70300",
+                    "LongName": "Namespace ID",
+                    "content": 900001
+                }
+            }
+        }},
+        "ns3:RSP_ZK21_QUERY_RESPONSE": {"ns2:PID": {
+            "ns2:PID_8": "F",
+            "ns2:PID_11": [
+                {
+                    "ns2:XAD_6": "US",
+                    "ns2:XAD_7": "M",
+                    "ns2:XAD_4": "PA",
+                    "ns2:XAD_5": 19355,
+                    "ns2:XAD_3": "Malvern",
+                    "ns2:XAD_1": {"ns2:SAD_1": "51 Valley Stream Pkwy"},
+                    "ns2:XAD_8": "GEO1",
+                    "ns2:XAD_9": "Chester",
+                    "ns2:XAD_12": {"ns2:DR_1": {"ns2:TS_1": 20170525000000}}
+                },
+                {
+                    "ns2:XAD_6": "US",
+                    "ns2:XAD_7": "N",
+                    "ns2:XAD_4": "AK",
+                    "ns2:XAD_3": "cityofbirth"
+                }
+            ],
+            "ns2:PID_22": [
+                {"ns2:CE_1": "NotHIS"},
+                {"ns2:CE_1": "NotHIS"}
+            ],
+            "ns2:PID_3": [
+                {
+                    "ns2:CX_1": 987654321,
+                    "ns2:CX_3": "",
+                    "ns2:CX_5": "SS",
+                    "ns2:CX_4": {"ns2:HD_1": 900001}
+                },
+                {
+                    "ns2:CX_1": 418,
+                    "ns2:CX_3": "",
+                    "ns2:CX_5": "PN",
+                    "ns2:CX_4": {"ns2:HD_1": 900000}
+                }
+            ],
+            "ns2:PID_13": [
+                {"ns2:XTN_4": "abc@abc_com"},
+                {
+                    "ns2:XTN_7": 4567891,
+                    "ns2:XTN_5": 1,
+                    "ns2:XTN_6": 123,
+                    "ns2:XTN_3": "PH",
+                    "ns2:XTN_2": "PRN"
+                }
+            ],
+            "ns2:PID_5": {
+                "ns2:XPN_2": "RS",
+                "ns2:XPN_1": {"ns2:FN_1": "RS"},
+                "ns2:XPN_7": "Legal"
+            },
+            "ns2:PID_15": {"ns2:CE_1": "eng"},
+            "ns2:PID_16": {"ns2:CE_1": "S"},
+            "ns2:PID_27": {"ns2:CE_1": "NO"},
+            "ns2:PID_7": {"ns2:TS_1": 19910101000000},
+            "ns2:PID_17": {"ns2:CE_1": "None"},
+            "ns2:PID_6": {"ns2:XPN_1": {"ns2:FN_1": "Mothersmaidenname"}},
+            "ns2:PID_30": "N",
+            "ns2:PID_10": [
+                {"ns2:CE_1": "Asian"},
+                {"ns2:CE_1": "AmInd"}
+            ]
+        }},
+        "ns2:MSA": {
+            "ns2:MSA_2": "",
+            "ns2:MSA_1": "AA"
+        },
+        "ns2:QAK": {
+            "ns2:QAK_3": {"ns2:CE_1": ""},
+            "ns2:QAK_1": ""
+        },
+        "xmlns:ns3": "http://healthcare_cerner_com/soarian/schema/mpi_v3",
+        "xmlns:ns4": "http://healthcare_siemens_com/soarian/schema/mpi_v2"
+    }
+	}
