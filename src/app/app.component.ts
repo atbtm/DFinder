@@ -35,20 +35,6 @@ export class MyApp {
               private menuCtrl: MenuController,
               private authService: AuthService) {
 
-    firebase.initializeApp({
-      apiKey: "AIzaSyBriR1rBSf_Ve-BJ77tog0Kdd41gx2v2mM",
-      authDomain: "dfinder-e9ef7.firebaseapp.com",
-      databaseURL: "https://dfinder-e9ef7.firebaseio.com",
-    });
-//     firebase.initializeApp({
-//       apiKey: "AIzaSyAXwqkQhaRynB_yJz1NUezgP8JoaQt1Sc0",
-//       authDomain: "fir-playground-195a9.firebaseapp.com",
-//       databaseURL: "https://fir-playground-195a9.firebaseio.com",
-//       projectId: "fir-playground-195a9",
-//       storageBucket: "fir-playground-195a9.appspot.com",
-//       messagingSenderId: "692509908432"
-//     });
-
     
 
 
